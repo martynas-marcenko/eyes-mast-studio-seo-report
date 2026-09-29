@@ -82,6 +82,16 @@
     .acc summary .q, .acc summary .reach { grid-column: 1; }
     .acc-body { padding-left: 22px; }
   }
+  .split { margin-top: 16px; background: var(--surface); border: 1px solid var(--crimson); border-radius: 14px; padding: 18px 22px; }
+  .split-h { font: 800 18px var(--display); font-stretch: 75%; text-transform: uppercase; color: var(--crimson); margin-bottom: 10px; }
+  .split-r { display: grid; grid-template-columns: 220px 50px 1fr; align-items: baseline; font-size: 15px; color: var(--ink-2); margin: 4px 0; }
+  .split-r span { font-size: 13px; color: var(--ink-3); }
+  .split-r b { font: 800 22px var(--display); font-stretch: 75%; color: var(--ink); }
+  .split-r em { font-style: normal; color: var(--ink-3); font-size: 13px; }
+  .split .act { margin-top: 10px; font-size: 14px; font-weight: 600; color: var(--crimson); }
+  .acc .page small { display: block; font: 400 11px var(--body); color: var(--ink-3); margin-top: 3px; }
+  .acc .page small.new { color: var(--crimson); font-weight: 600; }
+  @media (max-width: 820px) { .split-r { grid-template-columns: 1fr 50px; } .split-r span { display: none; } }
   .checks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 14px; }
   .check-g { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; }
   .check-g h3 { font-size: 18px; }
@@ -207,7 +217,7 @@
 
 <header class="hero">
   <div class="wrap">
-    <div class="eyebrow">SEO research · eyesmaststudio.com</div>
+    <div class="eyebrow">SEO research · eyesmast.studio</div>
     <h1>Where you can win<br>on Google</h1>
     <p>Who ranks today, and how you get there.</p>
     <div class="meta">US market · Google data · September 2026</div>
@@ -220,10 +230,16 @@
     <div class="eyebrow">01 · Today</div>
     <h2>Google barely sees the site</h2>
     <div class="tiles">
-      <div class="tile"><div class="num">6<small>/100</small></div><div class="lbl">Site strength (Domain Authority)</div></div>
-      <div class="tile"><div class="num">3</div><div class="lbl">Keywords ranking in the US. Best position: #20</div></div>
-      <div class="tile"><div class="num">36</div><div class="lbl">Websites linking to you</div></div>
-      <div class="tile"><div class="num">0</div><div class="lbl">Articles or written case studies</div></div>
+      <div class="tile"><div class="num">5<small>/100</small></div><div class="lbl">Site strength (Domain Authority)</div></div>
+      <div class="tile"><div class="num">0</div><div class="lbl">Keywords ranking in the US</div></div>
+      <div class="tile"><div class="num">9</div><div class="lbl">Websites linking to you</div></div>
+      <div class="tile"><div class="num">0</div><div class="lbl">Articles</div></div>
+    </div>
+    <div class="split">
+      <div class="split-h">Two sites split your brand</div>
+      <div class="split-r"><span>Google, "eyes mast studio"</span><b>#2</b><div>old eyesmaststudio.com <em>· 36 linking sites</em></div></div>
+      <div class="split-r"><span></span><b>#8</b><div>new eyesmast.studio <em>· 9 linking sites</em></div></div>
+      <div class="act">→ Redirect the old domain to the new one</div>
     </div>
   </div>
 </section>
@@ -250,7 +266,7 @@
     <div class="legend" aria-hidden="true">
       <span><i class="weak"></i>Small site (strength 20 or less)</span>
       <span><i class="strong"></i>Bigger site</span>
-      <span><i class="you"></i>Your site today (strength 6)</span>
+      <span><i class="you"></i>Your site today (strength 5)</span>
     </div>
     <div class="chart" id="chart" role="img" aria-label="Site strength of the top 10 Google results for 29 target searches, grouped by industry"></div>
   </div>
@@ -311,13 +327,17 @@
         <li>Internal links to key pages</li>
       </ul></div>
       <div class="check-g found"><h3>Found on your site</h3><ul>
-        <li>Empty meta descriptions on every page</li>
-        <li>2018 photo as the link-preview image</li>
-        <li>Old template pages in the sitemap</li>
-        <li>Two different addresses</li>
-        <li>Placeholder links ("New Page", "New Gallery")</li>
-        <li>Buttons linking to eyesmaststudio.squarespace.com</li>
-        <li>Same 8am–11pm hours listed all 7 days</li>
+        <li>Contact buttons go to the template's email, a Mexican phone number and @ludoviclosco</li>
+        <li>"- JORGE" in 19 of 20 page titles</li>
+        <li>Same description on 14 pages</li>
+        <li>69 of 70 images have no alt text</li>
+        <li>No H1 heading on the homepage</li>
+        <li>Case study URLs don't match the brand (/works/nopal is XOMD)</li>
+        <li>"Scalling" typo in a page name and URL</li>
+        <li>LinkedIn link opens the admin dashboard</li>
+        <li>Same share image on every page</li>
+        <li>Service pages under 200 words</li>
+        <li>Old site eyesmaststudio.com still live</li>
         <li>Google Business Profile set up with one address</li>
       </ul></div>
     </div>
@@ -336,7 +356,7 @@
 
 <script>
 const DATA = [{"group": "Luxury", "kw": "luxury branding agency", "vol": 320, "tier": "Easy", "note": "", "sites": [{"p": 1, "d": "flat6concepts.com", "da": 15}, {"p": 2, "d": "hudsonrouge.com", "da": 31}, {"p": 3, "d": "lombardo.agency", "da": 25}, {"p": 4, "d": "designrush.com", "da": 57}, {"p": 5, "d": "quimbydigital.com", "da": 25}, {"p": 6, "d": "bespokeluxurymarketing.com", "da": 9}, {"p": 7, "d": "leviebranding.com", "da": 18}, {"p": 8, "d": "lyfemarketing.com", "da": 53}, {"p": 9, "d": "unorthodox.luxury", "da": 8}, {"p": 10, "d": "vmgroupe.com", "da": 21}]}, {"group": "Luxury", "kw": "luxury marketing agency", "vol": 260, "tier": "Easy", "note": "", "sites": [{"p": 1, "d": "bespokeluxurymarketing.com", "da": 9}, {"p": 2, "d": "hudsonrouge.com", "da": 31}, {"p": 3, "d": "lombardo.agency", "da": 25}, {"p": 4, "d": "lyfemarketing.com", "da": 53}, {"p": 5, "d": "quimbydigital.com", "da": 25}, {"p": 6, "d": "instagram.com", "da": 94}, {"p": 7, "d": "vmgroupe.com", "da": 21}, {"p": 8, "d": "newstyledigital.com", "da": 22}, {"p": 9, "d": "designrush.com", "da": 57}, {"p": 10, "d": "ogroup.net", "da": 26}]}, {"group": "Luxury", "kw": "marketing agency for luxury brands", "vol": 140, "tier": "Easy", "note": "", "sites": [{"p": 1, "d": "lombardo.agency", "da": 25}, {"p": 2, "d": "bespokeluxurymarketing.com", "da": 9}, {"p": 3, "d": "sortlist.com", "da": 48}, {"p": 4, "d": "hudsonrouge.com", "da": 31}, {"p": 5, "d": "kingandpartners.com", "da": 35}, {"p": 6, "d": "quimbydigital.com", "da": 25}, {"p": 7, "d": "lyfemarketing.com", "da": 53}, {"p": 8, "d": "vmgroupe.com", "da": 21}, {"p": 9, "d": "digitalagencynetwork.com", "da": 54}, {"p": 10, "d": "jackmorton.com", "da": 45}]}, {"group": "Luxury", "kw": "creative agency for luxury brands", "vol": 90, "tier": "Medium", "note": "", "sites": [{"p": 1, "d": "lombardo.agency", "da": 25}, {"p": 2, "d": "vmgroupe.com", "da": 21}, {"p": 3, "d": "kingandpartners.com", "da": 35}, {"p": 4, "d": "hudsonrouge.com", "da": 31}, {"p": 5, "d": "digitalagencynetwork.com", "da": 54}, {"p": 6, "d": "bespokeluxurymarketing.com", "da": 9}, {"p": 7, "d": "quimbydigital.com", "da": 25}, {"p": 8, "d": "lyfemarketing.com", "da": 53}, {"p": 9, "d": "matterofform.com", "da": 33}, {"p": 10, "d": "nytimes.com", "da": 95}]}, {"group": "Luxury", "kw": "luxury advertising", "vol": 320, "tier": "Medium", "note": "articles", "sites": [{"p": 1, "d": "esade.edu", "da": 67}, {"p": 2, "d": "blockandtam.com", "da": 21}, {"p": 3, "d": "pinterest.com", "da": 94}, {"p": 4, "d": "sothebysinstitute.com", "da": 55}, {"p": 5, "d": "digitalagencynetwork.com", "da": 54}, {"p": 6, "d": "tegna.com", "da": 57}, {"p": 7, "d": "ikon.london", "da": 22}, {"p": 8, "d": "magazine.luxus-plus.com", "da": 42}, {"p": 9, "d": "youtube.com", "da": 100}, {"p": 10, "d": "bespokeluxurymarketing.com", "da": 9}]}, {"group": "Fashion", "kw": "fashion marketing agency", "vol": 480, "tier": "Easy", "note": "", "sites": [{"p": 1, "d": "ilovefashionretail.com", "da": 32}, {"p": 2, "d": "socialflyny.com", "da": 43}, {"p": 3, "d": "bl8k.com", "da": 10}, {"p": 4, "d": "lyfemarketing.com", "da": 53}, {"p": 5, "d": "boltpr.com", "da": 30}, {"p": 6, "d": "digitalagencynetwork.com", "da": 54}, {"p": 7, "d": "riot.nyc", "da": 20}, {"p": 8, "d": "thesocialshepherd.com", "da": 54}, {"p": 9, "d": "vmgroupe.com", "da": 21}, {"p": 10, "d": "reddit.com", "da": 92}]}, {"group": "Fashion", "kw": "fashion photography studio", "vol": 320, "tier": "Easy", "note": "", "sites": [{"p": 1, "d": "indiestudios.nyc", "da": 3}, {"p": 2, "d": "youtube.com", "da": 100}, {"p": 3, "d": "hasselbladstudios.com", "da": 12}, {"p": 4, "d": "clothingphotographystudio.com", "da": 21}, {"p": 5, "d": "yelp.com", "da": 93}, {"p": 6, "d": "youtube.com", "da": 100}, {"p": 7, "d": "caimera.ai", "da": 20}, {"p": 8, "d": "isa-aydin.com", "da": 28}, {"p": 9, "d": "eugenephotographer.com", "da": 17}, {"p": 10, "d": "blainepennington.com", "da": 14}]}, {"group": "Fashion", "kw": "fashion branding agency", "vol": 110, "tier": "Easy", "note": "", "sites": [{"p": 1, "d": "lombardo.agency", "da": 25}, {"p": 2, "d": "thebusinessrover.com", "da": 13}, {"p": 3, "d": "bl8k.com", "da": 10}, {"p": 4, "d": "ceftandcompany.com", "da": 25}, {"p": 5, "d": "revenuebase.ai", "da": 18}, {"p": 6, "d": "lyfemarketing.com", "da": 53}, {"p": 7, "d": "designrush.com", "da": 57}, {"p": 8, "d": "brandinglosangeles.com", "da": 34}, {"p": 9, "d": "agencies.semrush.com", "da": 86}, {"p": 10, "d": "craftandroot.com", "da": 22}]}, {"group": "Fashion", "kw": "fashion brand agency", "vol": 110, "tier": "Easy", "note": "", "sites": [{"p": 1, "d": "ilovefashionretail.com", "da": 32}, {"p": 2, "d": "sumdesign.co.uk", "da": 22}, {"p": 3, "d": "bl8k.com", "da": 10}, {"p": 4, "d": "lyfemarketing.com", "da": 53}, {"p": 5, "d": "reddit.com", "da": 92}, {"p": 6, "d": "boltpr.com", "da": 30}, {"p": 7, "d": "instagram.com", "da": 94}, {"p": 8, "d": "lombardo.agency", "da": 25}, {"p": 9, "d": "quimbydigital.com", "da": 25}, {"p": 10, "d": "agencies.semrush.com", "da": 86}]}, {"group": "Fashion", "kw": "fashion advertising agency", "vol": 70, "tier": "Medium", "note": "", "sites": [{"p": 1, "d": "vmgroupe.com", "da": 21}, {"p": 2, "d": "digitalagencynetwork.com", "da": 54}, {"p": 3, "d": "ilovefashionretail.com", "da": 32}, {"p": 4, "d": "bl8k.com", "da": 10}, {"p": 5, "d": "boltpr.com", "da": 30}, {"p": 6, "d": "powerdigitalmarketing.com", "da": 45}, {"p": 7, "d": "reddit.com", "da": 92}, {"p": 8, "d": "designrush.com", "da": 57}, {"p": 9, "d": "lyfemarketing.com", "da": 53}, {"p": 10, "d": "thesocialshepherd.com", "da": 54}]}, {"group": "Watches & jewellery", "kw": "jewelry marketing agency", "vol": 110, "tier": "Easy", "note": "", "sites": [{"p": 1, "d": "thesproutmedia.com", "da": 5}, {"p": 2, "d": "jivesmedia.com", "da": 28}, {"p": 3, "d": "instagram.com", "da": 94}, {"p": 4, "d": "deepearthmkt.com", "da": 9}, {"p": 5, "d": "gemfind.com", "da": 35}, {"p": 6, "d": "freshleydigital.com", "da": 13}, {"p": 7, "d": "reddit.com", "da": 92}, {"p": 8, "d": "veicolo-agency.com", "da": 13}, {"p": 9, "d": "amptive.com", "da": 17}, {"p": 10, "d": "jivesmedia.com", "da": 28}]}, {"group": "Watches & jewellery", "kw": "jewelry branding agency", "vol": 70, "tier": "Easy", "note": "", "sites": [{"p": 1, "d": "jivesmedia.com", "da": 28}, {"p": 2, "d": "instagram.com", "da": 94}, {"p": 3, "d": "thesproutmedia.com", "da": 5}, {"p": 4, "d": "gemfind.com", "da": 35}, {"p": 5, "d": "amptive.com", "da": 17}, {"p": 6, "d": "veicolo-agency.com", "da": 13}, {"p": 7, "d": "ikon.london", "da": 22}, {"p": 8, "d": "thebrandstrategylab.com", "da": 15}, {"p": 9, "d": "behance.net", "da": 92}, {"p": 10, "d": "esa.int", "da": 91}]}, {"group": "Watches & jewellery", "kw": "jewelry photography", "vol": 720, "tier": "Medium", "note": "", "sites": [{"p": 1, "d": "reddit.com", "da": 92}, {"p": 2, "d": "visualeducation.com", "da": 35}, {"p": 3, "d": "gemfind.com", "da": 35}, {"p": 4, "d": "behmphoto.com", "da": 16}, {"p": 5, "d": "gia.edu", "da": 81}, {"p": 6, "d": "metalsmithsociety.com", "da": 31}, {"p": 7, "d": "store.bandccamera.com", "da": 28}, {"p": 8, "d": "pinterest.com", "da": 94}, {"p": 9, "d": "photorobot.com", "da": 30}, {"p": 10, "d": "youtube.com", "da": 100}]}, {"group": "Watches & jewellery", "kw": "jewelry advertising", "vol": 8100, "tier": "Medium", "note": "ad ideas", "sites": [{"p": 1, "d": "pinterest.com", "da": 94}, {"p": 2, "d": "zeely.ai", "da": 32}, {"p": 3, "d": "magnific.com", "da": 91}, {"p": 4, "d": "gemfind.com", "da": 35}, {"p": 5, "d": "marpipe.com", "da": 39}, {"p": 6, "d": "newspaperjewelry.com", "da": 23}, {"p": 7, "d": "digitalagencynetwork.com", "da": 54}, {"p": 8, "d": "reddit.com", "da": 92}, {"p": 9, "d": "signsandmirrors.com", "da": 13}, {"p": 10, "d": "cropink.com", "da": 43}]}, {"group": "Watches & jewellery", "kw": "watch photography", "vol": 260, "tier": "Hard", "note": "", "sites": [{"p": 1, "d": "pinterest.com", "da": 94}, {"p": 2, "d": "deployant.com", "da": 48}, {"p": 3, "d": "watchuseek.com", "da": 61}, {"p": 4, "d": "gr.pinterest.com", "da": 94}, {"p": 5, "d": "reddit.com", "da": 92}, {"p": 6, "d": "facebook.com", "da": 96}, {"p": 7, "d": "omegaforums.net", "da": 45}, {"p": 8, "d": "pinterest.com", "da": 94}, {"p": 9, "d": "omegaforums.net", "da": 45}, {"p": 10, "d": "mx.pinterest.com", "da": 94}]}, {"group": "Beauty & skincare", "kw": "beauty marketing agency", "vol": 480, "tier": "Medium", "note": "", "sites": [{"p": 1, "d": "caseagency.com", "da": 24}, {"p": 2, "d": "5wpr.com", "da": 57}, {"p": 3, "d": "digitalagencynetwork.com", "da": 54}, {"p": 4, "d": "beautymatter.com", "da": 50}, {"p": 5, "d": "reddit.com", "da": 92}, {"p": 6, "d": "ampagency.com", "da": 52}, {"p": 7, "d": "dataally.ai", "da": 28}, {"p": 8, "d": "thebeautyofmarketing.com", "da": 6}, {"p": 9, "d": "brentonway.com", "da": 31}, {"p": 10, "d": "lyfemarketing.com", "da": 53}]}, {"group": "Beauty & skincare", "kw": "beauty branding agency", "vol": 170, "tier": "Medium", "note": "", "sites": [{"p": 1, "d": "smakkstudios.com", "da": 31}, {"p": 2, "d": "beautymatter.com", "da": 50}, {"p": 3, "d": "establishednyc.com", "da": 30}, {"p": 4, "d": "reddit.com", "da": 92}, {"p": 5, "d": "quimbydigital.com", "da": 25}, {"p": 6, "d": "ampagency.com", "da": 52}, {"p": 7, "d": "mslk.com", "da": 44}, {"p": 8, "d": "caseagency.com", "da": 24}, {"p": 9, "d": "brighterclick.com", "da": 34}, {"p": 10, "d": "beautiful-sparks.com", "da": 17}]}, {"group": "Beauty & skincare", "kw": "beauty brand agency", "vol": 110, "tier": "Easy", "note": "", "sites": [{"p": 1, "d": "beautybrandsagency.com", "da": 5}, {"p": 2, "d": "establishednyc.com", "da": 30}, {"p": 3, "d": "mslk.com", "da": 44}, {"p": 4, "d": "basebeauty.com", "da": 31}, {"p": 5, "d": "quimbydigital.com", "da": 25}, {"p": 6, "d": "caseagency.com", "da": 24}, {"p": 7, "d": "stellarising.com", "da": 46}, {"p": 8, "d": "beautiful-sparks.com", "da": 17}, {"p": 9, "d": "beautymatter.com", "da": 50}, {"p": 10, "d": "beautymatter.com", "da": 50}]}, {"group": "Beauty & skincare", "kw": "makeup product photography", "vol": 390, "tier": "Medium", "note": "", "sites": [{"p": 1, "d": "pinterest.com", "da": 94}, {"p": 2, "d": "nathankraxberger.com", "da": 22}, {"p": 3, "d": "visualeducation.com", "da": 35}, {"p": 4, "d": "howlettphoto.com", "da": 24}, {"p": 5, "d": "soona.co", "da": 41}, {"p": 6, "d": "schoolofnaturalskincare.com", "da": 39}, {"p": 7, "d": "behance.net", "da": 92}, {"p": 8, "d": "pebblely.com", "da": 28}, {"p": 9, "d": "squareshot.com", "da": 29}, {"p": 10, "d": "instagram.com", "da": 94}]}, {"group": "Beauty & skincare", "kw": "cosmetic product photography", "vol": 260, "tier": "Medium", "note": "", "sites": [{"p": 1, "d": "nathankraxberger.com", "da": 22}, {"p": 2, "d": "pinterest.com", "da": 94}, {"p": 3, "d": "youtube.com", "da": 100}, {"p": 4, "d": "magnific.com", "da": 91}, {"p": 5, "d": "behance.net", "da": 92}, {"p": 6, "d": "schoolofnaturalskincare.com", "da": 39}, {"p": 7, "d": "visualeducation.com", "da": 35}, {"p": 8, "d": "instagram.com", "da": 94}, {"p": 9, "d": "squareshot.com", "da": 29}, {"p": 10, "d": "squareshot.com", "da": 29}]}, {"group": "Fragrance", "kw": "perfume bottle design", "vol": 480, "tier": "Medium", "note": "bottle suppliers", "sites": [{"p": 1, "d": "pacdora.com", "da": 33}, {"p": 2, "d": "pinterest.com", "da": 94}, {"p": 3, "d": "coverpla.com", "da": 21}, {"p": 4, "d": "wallpaper.com", "da": 83}, {"p": 5, "d": "alphaaromatics.com", "da": 38}, {"p": 6, "d": "abelyperfume.com", "da": 25}, {"p": 7, "d": "estal.com", "da": 28}, {"p": 8, "d": "dribbble.com", "da": 92}, {"p": 9, "d": "vecteezy.com", "da": 87}, {"p": 10, "d": "instagram.com", "da": 94}]}, {"group": "Fragrance", "kw": "fragrance photography", "vol": 170, "tier": "Hard", "note": "", "sites": [{"p": 1, "d": "pinterest.com", "da": 94}, {"p": 2, "d": "reddit.com", "da": 92}, {"p": 3, "d": "timothy-hogan.com", "da": 29}, {"p": 4, "d": "behance.net", "da": 92}, {"p": 5, "d": "youtube.com", "da": 100}, {"p": 6, "d": "instagram.com", "da": 94}, {"p": 7, "d": "unsplash.com", "da": 93}, {"p": 8, "d": "blog.skylum.com", "da": 73}, {"p": 9, "d": "reddit.com", "da": 92}, {"p": 10, "d": "omsphoto.com", "da": 29}]}, {"group": "Fragrance", "kw": "perfume photography", "vol": 170, "tier": "Hard", "note": "", "sites": [{"p": 1, "d": "pinterest.com", "da": 94}, {"p": 2, "d": "behance.net", "da": 92}, {"p": 3, "d": "unsplash.com", "da": 93}, {"p": 4, "d": "instagram.com", "da": 94}, {"p": 5, "d": "reddit.com", "da": 92}, {"p": 6, "d": "pebblely.com", "da": 28}, {"p": 7, "d": "youtube.com", "da": 100}, {"p": 8, "d": "magnific.com", "da": 91}, {"p": 9, "d": "shutterstock.com", "da": 93}, {"p": 10, "d": "davidlineton.com", "da": 21}]}, {"group": "Fragrance", "kw": "perfume advertising", "vol": 2900, "tier": "Hard", "note": "ad galleries", "sites": [{"p": 1, "d": "reddit.com", "da": 92}, {"p": 2, "d": "alamy.com", "da": 90}, {"p": 3, "d": "trendhunter.com", "da": 81}, {"p": 4, "d": "facebook.com", "da": 96}, {"p": 5, "d": "facebook.com", "da": 96}, {"p": 6, "d": "blogs.ubc.ca", "da": 90}, {"p": 7, "d": "pippit.ai", "da": 43}, {"p": 8, "d": "nationalreview.com", "da": 90}, {"p": 9, "d": "tiktok.com", "da": 97}, {"p": 10, "d": "ebay.com", "da": 93}]}, {"group": "Services, all industries", "kw": "ai video agency", "vol": 390, "tier": "Easy", "note": "", "sites": [{"p": 1, "d": "351studio.com", "da": 22}, {"p": 2, "d": "aicandy.be", "da": 23}, {"p": 3, "d": "synima.com", "da": 33}, {"p": 4, "d": "lavamedia.us", "da": 18}, {"p": 5, "d": "reddit.com", "da": 92}, {"p": 6, "d": "americanmovieco.com", "da": 30}, {"p": 7, "d": "tigerhousefilms.com", "da": 16}, {"p": 8, "d": "linkedin.com", "da": 99}, {"p": 9, "d": "bearjam.co.uk", "da": 21}, {"p": 10, "d": "351studio.com", "da": 22}]}, {"group": "Services, all industries", "kw": "content creation agency", "vol": 8100, "tier": "Easy", "note": "", "sites": [{"p": 1, "d": "begoodagency.com", "da": 12}, {"p": 2, "d": "sdcopartners.com", "da": 35}, {"p": 3, "d": "agencies.semrush.com", "da": 86}, {"p": 4, "d": "beomniscient.com", "da": 38}, {"p": 5, "d": "reddit.com", "da": 92}, {"p": 6, "d": "contentsupply.com", "da": 23}, {"p": 7, "d": "siegemedia.com", "da": 56}, {"p": 8, "d": "creatorsagency.co", "da": 21}, {"p": 9, "d": "digitalagencynetwork.com", "da": 54}, {"p": 10, "d": "youtube.com", "da": 100}]}, {"group": "Services, all industries", "kw": "brand identity design services", "vol": 8100, "tier": "Easy", "note": "", "sites": [{"p": 1, "d": "knoxdesignstrategy.com", "da": 24}, {"p": 2, "d": "duck.design", "da": 31}, {"p": 3, "d": "flexy.global", "da": 13}, {"p": 4, "d": "qubstudio.com", "da": 34}, {"p": 5, "d": "50pros.com", "da": 39}, {"p": 6, "d": "prometsource.com", "da": 34}, {"p": 7, "d": "curran-connors.com", "da": 36}, {"p": 8, "d": "youtube.com", "da": 100}, {"p": 9, "d": "freshsparks.com", "da": 37}, {"p": 10, "d": "fzpdigital.com", "da": 21}]}, {"group": "Services, all industries", "kw": "rebranding agency", "vol": 390, "tier": "Easy", "note": "", "sites": [{"p": 1, "d": "rebrandagency.co", "da": 5}, {"p": 2, "d": "brandiron.net", "da": 28}, {"p": 3, "d": "boil.agency", "da": 11}, {"p": 4, "d": "altitudemarketing.com", "da": 37}, {"p": 5, "d": "commence.studio", "da": 28}, {"p": 6, "d": "reddit.com", "da": 92}, {"p": 7, "d": "parallelhq.com", "da": 31}, {"p": 8, "d": "metabrand.digital", "da": 23}, {"p": 9, "d": "behance.net", "da": 92}, {"p": 10, "d": "doodleweb.io", "da": 20}]}, {"group": "Services, all industries", "kw": "creative production studio", "vol": 70, "tier": "Easy", "note": "", "sites": [{"p": 1, "d": "kuamp.com", "da": 20}, {"p": 2, "d": "peerspace.com", "da": 64}, {"p": 3, "d": "creativeproductionstudio.com", "da": 4}, {"p": 4, "d": "creativeonmainstreet.com", "da": 8}, {"p": 5, "d": "wondercamp.co", "da": 23}, {"p": 6, "d": "riot.nyc", "da": 20}, {"p": 7, "d": "captivcreative.com", "da": 19}, {"p": 8, "d": "tigerhousefilms.com", "da": 16}, {"p": 9, "d": "creativestudiosla.com", "da": 7}, {"p": 10, "d": "huffmancreative.com", "da": 13}]}];
-const EMS = 6, WEAK = 20;
+const EMS = 5, WEAK = 20;
 const chart = document.getElementById('chart');
 const tip = document.getElementById('tip');
 const x = da => `${da}%`;
@@ -393,6 +413,7 @@ chart.addEventListener('mouseleave', () => tip.style.opacity = 0);
 const LT = [
  {
   "page": "Home",
+  "exists": "/",
   "main": "luxury branding agency",
   "main_vol": 320,
   "main_est": false,
@@ -450,6 +471,7 @@ const LT = [
  },
  {
   "page": "Luxury",
+  "exists": null,
   "main": "luxury marketing agency",
   "main_vol": 260,
   "main_est": false,
@@ -503,6 +525,7 @@ const LT = [
  },
  {
   "page": "Fashion",
+  "exists": null,
   "main": "fashion marketing agency",
   "main_vol": 480,
   "main_est": false,
@@ -560,6 +583,7 @@ const LT = [
  },
  {
   "page": "Beauty",
+  "exists": null,
   "main": "beauty marketing agency",
   "main_vol": 480,
   "main_est": false,
@@ -604,6 +628,7 @@ const LT = [
  },
  {
   "page": "Jewellery",
+  "exists": null,
   "main": "jewelry marketing agency",
   "main_vol": 110,
   "main_est": false,
@@ -641,6 +666,7 @@ const LT = [
  },
  {
   "page": "AI & CGI",
+  "exists": "/works/services/ai-production",
   "main": "ai video agency",
   "main_vol": 390,
   "main_est": false,
@@ -698,6 +724,7 @@ const LT = [
  },
  {
   "page": "Brand Strategy",
+  "exists": "/works/services/advisory",
   "main": "rebranding agency",
   "main_vol": 390,
   "main_est": false,
@@ -755,6 +782,7 @@ const LT = [
  },
  {
   "page": "Brand Identity",
+  "exists": "/works/services/brand-identity",
   "main": "brand identity design services",
   "main_vol": 8100,
   "main_est": true,
@@ -812,6 +840,7 @@ const LT = [
  },
  {
   "page": "Production",
+  "exists": "/works/services/content-campaigns",
   "main": "content creation agency",
   "main_vol": 8100,
   "main_est": true,
@@ -869,6 +898,7 @@ const LT = [
  },
  {
   "page": "Photography",
+  "exists": null,
   "main": "jewelry photography",
   "main_vol": 720,
   "main_est": false,
@@ -926,6 +956,7 @@ const LT = [
  },
  {
   "page": "About",
+  "exists": null,
   "main": "boutique creative agency",
   "main_vol": 140,
   "main_est": false,
@@ -989,7 +1020,7 @@ for (const r of LT) {
   const d = document.createElement('details');
   d.className = 'acc';
   d.innerHTML = `<summary>
-      <div class="page">${r.page}</div>
+      <div class="page">${r.page}${r.exists ? `<small>${r.exists}</small>` : `<small class="new">New page</small>`}</div>
       <div class="q">${r.main}<b>${fmt(r.main_vol)}</b></div>
       <div class="reach"><div class="bar"><span class="m" style="width:${mPct}%"></span><span class="l" style="flex:1"></span></div>
         <div class="tot">${fmt(total)} / mo<small>+${fmt(r.lt_total)} long tail</small>${est}</div></div>
